@@ -5,13 +5,13 @@
 
 **기존 poseaug에 추가한 함수**
 
-/common/render.py
+`/common/render.py`
 
-/data/prepare_data_2d_custom.py
+`/data/prepare_data_2d_custom.py`
 
-/function_poseaug/data_preparation_custom.py
+`/function_poseaug/data_preparation_custom.py`
 
-run_poseaug_custom.py
+`/run_poseaug_custom.py`
 
 ### 1. **2D Keypoints 추출**
 
