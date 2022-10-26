@@ -43,8 +43,10 @@ python prepare_data_2d_custom.py -i path/to/output_directory -o mine
 
 PoseAug는 h36m format의 2d keypoint를 사용합니다. 우리가 1번에서 추출한 2d keypoint는 COCO format으로 keypoint의 배열이 맞지 않습니다. 그래서 coco_2_h36m 함수를 이용해 기존 coco 배열을 h36m 배열로 바꿔주었습니다. 연산 과정의 이해는 하단의 annotation과 함수 내 주석을 참고해주세요.
 
-<center><img src = "./joints.jpg" width='50%' height='50%'><center>
-    
+<p align="center">
+    <img src = "https://user-images.githubusercontent.com/85193600/198082518-f2e221c7-d03f-4a99-92b4-898b5b32a0ac.jpg" width='50%' height='50%'/>
+ </p>   
+ 
 coco_annotation
 
 0: nose, 1: Leye, 2: Reye, 3:Lear, 4: Rear
