@@ -55,6 +55,7 @@ coco_annotation
 13: Lknee, 14: Rknee, 15: Lankle, 16: Rankle
 
 h36m_annotation
+
 0: Hip, 1: RHip, 2: RKnee, 3: RFoot
 6: LHip, 7: LKnee, 8: LFoot
 12: Spine, 13: Thorax, 14: Neck/Nose, 15: Head
