@@ -2,7 +2,7 @@
 ## [들어가기 전에]
 
 이 코드는 [PoseAug](https://github.com/jfzhang95/PoseAug)를 사용자의 비디오에 적용하고, visualization 할 수 있게 설계된 코드입니다. 입력 video에서 2d keypoint를 추출은 detectron2를 사용하였고, vizualization은 VideoPose3D를 참고해 적용했습니다. 아래의 내용은 위 코드에 관한 사용법과 추가된 함수에 대한 설명입니다.
-![walking](https://user-images.githubusercontent.com/85193600/198078966-2857abdd-f321-4de1-acc2-11d31def69f6.gif)
+<img src = "example/walking.gif" width='30%' height='30%'>
 ![dancing](https://user-images.githubusercontent.com/85193600/198078984-0a841cf9-b630-404a-bb23-3ea80be60c47.gif)
 
 
