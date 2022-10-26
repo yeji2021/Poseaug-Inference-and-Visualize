@@ -3,10 +3,11 @@
 
 이 코드는 [PoseAug](https://github.com/jfzhang95/PoseAug)를 사용자의 비디오에 적용하고, visualization 할 수 있게 설계된 코드입니다. 입력 video에서 2d keypoint를 추출은 [detectron2](https://github.com/facebookresearch/detectron2)를 사용하였고, vizualization은 [VideoPose3D](https://github.com/facebookresearch/VideoPose3D)를 참고해 적용했습니다. 아래의 내용은 위 코드에 관한 사용법과 추가된 함수에 대한 설명입니다.
 
-<center class="half">
-    <img src = "example/walking.gif" width='40%' height='40%'>
-    <img src = "example/dancing.gif" width='40%' height='40%'>
-center>
+<p align="center">
+    <img src = "example/dancing.gif" width='40%' height='40%'/>
+</p>
+( 더 많은 예시 영상은 `/examples` 폴더에 있습니다)
+
 
 **기존 poseaug에 추가한 함수**
 
