@@ -1,17 +1,14 @@
 # Poseaug-inference-Video-Visualize
 ## [들어가기 전에]
 
-이 코드는 PoseAug를 사용자의 비디오에 적용하고, visualization 할 수 있게 설계된 코드입니다. 입력 video에서 2d keypoint를 추출은 detectron2를 사용하였고, viz는 VideoPose3D를 참고해 적용했습니다. 아래의 내용은 위 코드에 관한 사용법과 추가된 함수에 대한 설명입니다.
+이 코드는 [PoseAug](https://github.com/jfzhang95/PoseAug)를 사용자의 비디오에 적용하고, visualization 할 수 있게 설계된 코드입니다. 입력 video에서 2d keypoint를 추출은 detectron2를 사용하였고, vizualization은 VideoPose3D를 참고해 적용했습니다. 아래의 내용은 위 코드에 관한 사용법과 추가된 함수에 대한 설명입니다.
+![walking](https://user-images.githubusercontent.com/85193600/198078966-2857abdd-f321-4de1-acc2-11d31def69f6.gif)
+![dancing](https://user-images.githubusercontent.com/85193600/198078984-0a841cf9-b630-404a-bb23-3ea80be60c47.gif)
+
 
 **기존 poseaug에 추가한 함수**
 
-`/common/render.py`
-
-`/data/prepare_data_2d_custom.py`
-
-`/function_poseaug/data_preparation_custom.py`
-
-`/run_poseaug_custom.py`
+`/common/render.py`, `/data/prepare_data_2d_custom.py` , `/function_poseaug/data_preparation_custom.py` , `/run_poseaug_custom.py`
 
 ### 1. **2D Keypoints 추출**
 
@@ -57,13 +54,8 @@ h36m_annotation
 17: LShoulder, 18: LElbow, 19: LWrist
 25: RShoulder, 26: RElbow, 27: RWrist
 
-![coco annotation ](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9fb8d4d6-7322-4c2c-ab0c-4ca91b14cb4d/Untitled.png)
 
-coco annotation 
-
-![h36m annotation , parent and child ( Cascade Deep Monocular 3D Human Pose Estimation with Evolutionary Training Data 2006 )](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e4f1ec2c-c8f6-4a9f-9100-fe10ec5709b2/Untitled.png)
-
-h36m annotation , parent and child ( Cascade Deep Monocular 3D Human Pose Estimation with Evolutionary Training Data 2006 )
+![joints](./joints.jpg)
 
 (+) Head joint의 경우, coco의 nose joint를 사용했습니다만, poseaug측에서 추천한 방법은 *When missing joint definition in Head, we generate the Head joint by extending the vector from Pelvis to Thorax in a fixed ratio (0.4)* ([https://github.com/jfzhang95/PoseAug/issues/4](https://github.com/jfzhang95/PoseAug/issues/4)) 임을 참고해주세요.
 
@@ -83,7 +75,7 @@ data_dict = data_preparation_custom(args)
 dataset = CustomDataset('data/data_2d_'+ args.dataset + '_' + args.keypoints + '.npz' )
 ```
 
-( facebookresearch/VideoPose3D 의 코드를 참고해 변형하였습니다.)
+( [VideoPose3D](https://github.com/facebookresearch/VideoPose3D) 의 코드를 참고해 변형하였습니다.)
 
 CustomDataset 클래스는 dataset의 선언된 value값을 다루는 클래스로, custom dataset에 model과 render에 필요한 value 값을 알맞게 넣어줍니다.
 
@@ -106,3 +98,4 @@ CustomDataset 클래스는 dataset의 선언된 value값을 다루는 클래스�
     ```
     
     10번과 13번의 parents를 8번 head와 연결해줍니다.
+   
