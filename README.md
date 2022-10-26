@@ -2,8 +2,9 @@
 ## [들어가기 전에]
 
 이 코드는 [PoseAug](https://github.com/jfzhang95/PoseAug)를 사용자의 비디오에 적용하고, visualization 할 수 있게 설계된 코드입니다. 입력 video에서 2d keypoint를 추출은 detectron2를 사용하였고, vizualization은 VideoPose3D를 참고해 적용했습니다. 아래의 내용은 위 코드에 관한 사용법과 추가된 함수에 대한 설명입니다.
-<img src = "example/walking.gif" width='30%' height='30%'>
-![dancing](https://user-images.githubusercontent.com/85193600/198078984-0a841cf9-b630-404a-bb23-3ea80be60c47.gif)
+
+<center><img src = "example/walking.gif" width='50%' height='50%'><center>
+<center><img src = "example/dancing.gif" width='50%' height='50%'><center>
 
 
 **기존 poseaug에 추가한 함수**
@@ -40,6 +41,8 @@ python prepare_data_2d_custom.py -i path/to/output_directory -o mine
 
 PoseAug는 h36m format의 2d keypoint를 사용합니다. 우리가 1번에서 추출한 2d keypoint는 COCO format으로 keypoint의 배열이 맞지 않습니다. 그래서 coco_2_h36m 함수를 이용해 기존 coco 배열을 h36m 배열로 바꿔주었습니다. 연산 과정의 이해는 하단의 annotation과 함수 내 주석을 참고해주세요.
 
+<center><img src = "./joints.jpg" width='50%' height='50%'><center>
+    
 coco_annotation
 
 0: nose, 1: Leye, 2: Reye, 3:Lear, 4: Rear
@@ -55,8 +58,7 @@ h36m_annotation
 25: RShoulder, 26: RElbow, 27: RWrist
 
 
-![joints](./joints.jpg)
-
+    
 (+) Head joint의 경우, coco의 nose joint를 사용했습니다만, poseaug측에서 추천한 방법은 *When missing joint definition in Head, we generate the Head joint by extending the vector from Pelvis to Thorax in a fixed ratio (0.4)* ([https://github.com/jfzhang95/PoseAug/issues/4](https://github.com/jfzhang95/PoseAug/issues/4)) 임을 참고해주세요.
 
 ### 3. **PoseAug 실행**
