@@ -1,10 +1,12 @@
 # Poseaug-inference-Video-Visualize
 ## [들어가기 전에]
 
-이 코드는 [PoseAug](https://github.com/jfzhang95/PoseAug)를 사용자의 비디오에 적용하고, visualization 할 수 있게 설계된 코드입니다. 입력 video에서 2d keypoint를 추출은 detectron2를 사용하였고, vizualization은 VideoPose3D를 참고해 적용했습니다. 아래의 내용은 위 코드에 관한 사용법과 추가된 함수에 대한 설명입니다.
+이 코드는 [PoseAug](https://github.com/jfzhang95/PoseAug)를 사용자의 비디오에 적용하고, visualization 할 수 있게 설계된 코드입니다. 입력 video에서 2d keypoint를 추출은 [detectron2](https://github.com/facebookresearch/detectron2)를 사용하였고, vizualization은 [VideoPose3D](https://github.com/facebookresearch/VideoPose3D)를 참고해 적용했습니다. 아래의 내용은 위 코드에 관한 사용법과 추가된 함수에 대한 설명입니다.
 
-<img src = "example/walking.gif" width='40%' height='40%'><center><img src = "example/dancing.gif" width='40%' height='40%'>
-
+<center class="half">
+    <img src = "example/walking.gif" width='40%' height='40%'>
+    <img src = "example/dancing.gif" width='40%' height='40%'>
+center>
 
 **기존 poseaug에 추가한 함수**
 
@@ -75,8 +77,6 @@ data_dict = data_preparation_custom(args)
 # data_preparation_custom.py line 21
 dataset = CustomDataset('data/data_2d_'+ args.dataset + '_' + args.keypoints + '.npz' )
 ```
-
-( [VideoPose3D](https://github.com/facebookresearch/VideoPose3D) 의 코드를 참고해 변형하였습니다.)
 
 CustomDataset 클래스는 dataset의 선언된 value값을 다루는 클래스로, custom dataset에 model과 render에 필요한 value 값을 알맞게 넣어줍니다.
 
